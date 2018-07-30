@@ -1,0 +1,76 @@
+.page {
+  font-family: sans-serif; }
+
+.header .navbar {
+  height: 40px;
+  display: flex;
+  justify-content: space-between;
+  background-color: rgba(4, 30, 66, 0.98);
+  padding: 4px 10px; }
+  .header .navbar input {
+    width: 120px;
+    font-size: 20px;
+    background-color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 0px;
+    height: 30px; }
+    @media (min-width: 375px) {
+      .header .navbar input {
+        width: 200px; } }
+    @media (min-width: 768px) {
+      .header .navbar input {
+        width: 400px; } }
+  .header .navbar button {
+    background-color: #ffcc00;
+    border: none;
+    border-radius: 0px;
+    padding: 5px;
+    height: 40px;
+    width: 40px;
+    font-size: 25px; }
+  .header .navbar button:hover {
+    background-color: #ffe066;
+    cursor: pointer; }
+  .header .navbar form {
+    display: flex;
+    justify-content: center; }
+
+.header .refine-sort {
+  background-color: #fff;
+  font-size: 14px;
+  border-bottom: 1px solid #aaa;
+  padding: 6px 10px;
+  display: grid;
+  grid-gap: 6px; }
+  @media (min-width: 768px) {
+    .header .refine-sort {
+      grid-template-columns: 1fr 1fr; } }
+  .header .refine-sort button {
+    height: 30px;
+    width: 32px;
+    background-color: #ffcc00;
+    border: 1px solid #000;
+    border-radius: 3px;
+    margin-left: 5px;
+    position: relative;
+    top: -1px; }
+  .header .refine-sort button:hover {
+    background-color: #ffe066;
+    cursor: pointer; }
+  @media (min-width: 768px) {
+    .header .refine-sort .sortby {
+      text-align: right; } }
+  .header .refine-sort .sortby select {
+    font-size: 16px;
+    background-color: #fff;
+    border: 1px solid #aaa;
+    padding: 5px;
+    border-radius: 3px; }
+  .header .refine-sort .refine input {
+    font-size: 16px;
+    background-color: #fff;
+    border: 1px solid #aaa;
+    padding: 5px;
+    border-radius: 3px;
+    width: 50px; }

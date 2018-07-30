@@ -1,0 +1,28 @@
+.products {
+  .num-results {
+    background-color: #fff;
+    font-size: 14px;
+    border-bottom:1px solid #aaa;
+    padding:0 10px;
+    p {margin:5px 0;}
+  }
+  .product-listing {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    padding:20px;
+    .product{
+      font-size:14px;
+      border:1px solid #ddd;
+      padding:20px;
+      a {color:#000; text-decoration: none;}
+      a:hover {text-decoration: underline;}
+      p {margin:8px 0 0 0;}
+      .star-rating {font-size:10px;}
+      .num-reviews {margin-left:5px;}
+      .msrp {font-size:16px; font-weight:bold;}
+      .sale-price {font-size:14px; margin-left:10px; color:#666;}
+      .two-day {color:green; font-weight:bold;}
+    }
+  }
+}

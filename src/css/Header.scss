@@ -1,0 +1,95 @@
+$dark-blue: rgba(4,30,66,.98);
+$orange: #ffcc00;
+
+.page {
+  font-family: sans-serif;
+}
+
+.header {
+  .navbar{
+    height:40px;
+    display: flex;
+    justify-content: space-between;
+    background-color: $dark-blue;
+    padding: 4px 10px;
+    input {
+      width:120px;
+      @media (min-width: 375px) {
+        width:200px;
+      }
+      @media (min-width: 768px) {
+        width:400px;
+      }
+      font-size: 20px;
+      background-color: #fff;
+      border:none;
+      padding:5px 10px;
+      border-radius: 0px;
+      height:30px;
+    }
+    button {
+      background-color: $orange;
+      border:none;
+      border-radius: 0px;
+      padding:5px;
+      height:40px;
+      width:40px;
+      font-size:25px;
+    }
+    button:hover {
+      background-color: lighten($orange, 20%);
+      cursor:pointer;
+    }
+    form {
+      display: flex;
+      justify-content: center;
+    }
+  }
+  .refine-sort{
+    background-color: #fff;
+    font-size: 14px;
+    border-bottom:1px solid #aaa;
+    padding:6px 10px;
+    display: grid;
+    @media (min-width: 768px) {
+      grid-template-columns: 1fr 1fr;
+    }
+    grid-gap: 6px;
+    button{
+      height:30px;
+      width:32px;
+      background-color: $orange;
+      border:1px solid #000;
+      border-radius: 3px;
+      margin-left:5px;
+      position: relative;
+      top: -1px;
+    }
+    button:hover {
+      background-color: lighten($orange, 20%);
+      cursor:pointer;
+    }
+    .sortby {
+      @media (min-width: 768px) {
+        text-align: right;
+      }
+      select {
+        font-size: 16px;
+        background-color: #fff;
+        border:1px solid #aaa;
+        padding:5px;
+        border-radius: 3px;
+      }
+    }
+    .refine {
+      input {
+        font-size: 16px;
+        background-color: #fff;
+        border:1px solid #aaa;
+        padding:5px;
+        border-radius: 3px;
+        width:50px;
+      }
+    }
+  }
+}
