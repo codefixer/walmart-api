@@ -1,6 +1,8 @@
 # Walmart API App
 
-NOTE: Please remember to add the provided .env file to the root directory
+NOTE: You must add a file named .env to the root directory that contains your Walmart API Key.
+Please use the following syntax:
+REACT_APP_API_KEY=[KEY]
 
 API Info: https://developer.walmartlabs.com/
 
