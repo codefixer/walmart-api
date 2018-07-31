@@ -24,13 +24,13 @@ $orange: #ffcc00;
       background-color: #fff;
       border:none;
       padding:5px 10px;
-      border-radius: 0px;
+      border-radius: 3px 0 0 3px;
       height:30px;
     }
     button {
       background-color: $orange;
       border:none;
-      border-radius: 0px;
+      border-radius: 3px;
       padding:5px;
       height:40px;
       width:40px;
@@ -43,6 +43,9 @@ $orange: #ffcc00;
     form {
       display: flex;
       justify-content: center;
+      button {
+        border-radius: 0 3px 3px 0;
+      }
     }
   }
   .refine-sort{

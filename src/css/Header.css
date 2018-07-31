@@ -13,7 +13,7 @@
     background-color: #fff;
     border: none;
     padding: 5px 10px;
-    border-radius: 0px;
+    border-radius: 3px 0 0 3px;
     height: 30px; }
     @media (min-width: 375px) {
       .header .navbar input {
@@ -24,7 +24,7 @@
   .header .navbar button {
     background-color: #ffcc00;
     border: none;
-    border-radius: 0px;
+    border-radius: 3px;
     padding: 5px;
     height: 40px;
     width: 40px;
@@ -35,6 +35,8 @@
   .header .navbar form {
     display: flex;
     justify-content: center; }
+    .header .navbar form button {
+      border-radius: 0 3px 3px 0; }
 
 .header .refine-sort {
   background-color: #fff;
