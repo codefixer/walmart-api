@@ -53,8 +53,8 @@ class ProductList extends React.Component {
                 <span className="star-rating">{this.renderStarRating(item.customerRating)}</span>
                 <span className="num-reviews">{item.numReviews}</span></p>}
               <p>
-                <span className="msrp">${item.salePrice.toFixed(2)}</span>
-                {item.msrp && <span className="sale-price">List <s>${item.msrp.toFixed(2)}</s></span>}
+                {item.salePrice && <span className="sale-price">${item.salePrice.toFixed(2)}</span>}
+                {item.msrp && <span className="msrp">List <s>${item.msrp.toFixed(2)}</s></span>}
               </p>
               {item.isTwoDayShippingEligible && <p className="two-day">2-day shipping</p>}
             </div>

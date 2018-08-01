@@ -42,7 +42,7 @@ class Products extends React.Component {
   getProducts = async (e) => {
     e.preventDefault();
     if(this.state.search_term){
-      var target = document.getElementById('root');
+      const target = document.getElementById('root');
       let spinner = new Spinner({color:'#000', lines: 12}).spin(target);
       const self = this;
       axios.get(`https://cors-anywhere.herokuapp.com/http://api.walmartlabs.com/v1/search?query=${this.state.search_term}&format=json&apiKey=${process.env.REACT_APP_API_KEY}&sort=${this.state.sort_by}&facet=on&facet.range=price:[${this.state.min_price} TO ${this.state.max_price}]`)
