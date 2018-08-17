@@ -50,7 +50,6 @@
       grid-template-columns: 1fr 1fr; } }
   .header .refine-sort button {
     height: 30px;
-    width: 32px;
     background-color: #ffcc00;
     border: 1px solid #000;
     border-radius: 3px;

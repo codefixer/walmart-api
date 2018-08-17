@@ -1,5 +1,4 @@
-$dark-blue: rgba(4,30,66,.98);
-$orange: #ffcc00;
+@import 'colors';
 
 .page {
   font-family: sans-serif;
@@ -21,7 +20,7 @@ $orange: #ffcc00;
         width:400px;
       }
       font-size: 20px;
-      background-color: #fff;
+      background-color: $white;
       border:none;
       padding:5px 10px;
       border-radius: 3px 0 0 3px;
@@ -49,9 +48,9 @@ $orange: #ffcc00;
     }
   }
   .refine-sort{
-    background-color: #fff;
+    background-color: $white;
     font-size: 14px;
-    border-bottom:1px solid #aaa;
+    border-bottom:1px solid $md-gray;
     padding:6px 10px;
     display: grid;
     @media (min-width: 768px) {
@@ -60,9 +59,9 @@ $orange: #ffcc00;
     grid-gap: 6px;
     button{
       height:30px;
-      width:32px;
+      //width:32px;
       background-color: $orange;
-      border:1px solid #000;
+      border:1px solid $black;
       border-radius: 3px;
       margin-left:5px;
       position: relative;
@@ -78,8 +77,8 @@ $orange: #ffcc00;
       }
       select {
         font-size: 16px;
-        background-color: #fff;
-        border:1px solid #aaa;
+        background-color: $white;
+        border:1px solid $md-gray;
         padding:5px;
         border-radius: 3px;
       }
@@ -87,8 +86,8 @@ $orange: #ffcc00;
     .refine {
       input {
         font-size: 16px;
-        background-color: #fff;
-        border:1px solid #aaa;
+        background-color: $white;
+        border:1px solid $md-gray;
         padding:5px;
         border-radius: 3px;
         width:50px;

@@ -4,3 +4,14 @@
     padding: 20px; }
     .page .error p {
       margin: 0; }
+    .page .error button {
+      height: 30px;
+      background-color: #ffcc00;
+      border: 1px solid #000;
+      border-radius: 3px;
+      margin-left: 5px;
+      position: relative;
+      top: -1px; }
+    .page .error button:hover {
+      background-color: #ffe066;
+      cursor: pointer; }

@@ -1,7 +1,22 @@
+@import 'colors';
+
 .page {
   font-family: sans-serif;
   .error {
     padding:20px;
     p {margin:0;}
+    button{
+      height:30px;
+      background-color: $orange;
+      border:1px solid $black;
+      border-radius: 3px;
+      margin-left:5px;
+      position: relative;
+      top: -1px;
+    }
+    button:hover {
+      background-color: lighten($orange, 20%);
+      cursor:pointer;
+    }
   }
 }

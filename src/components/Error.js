@@ -7,7 +7,7 @@ class Error extends React.Component {
     return (
       <div className="page">
         <div className="error">
-          <p>Error: Path does not exist! Go <a href="/">Home</a></p>
+          <p>Oops! Page doesn't exist! <a href="/"><button>Go Home</button></a></p>
         </div>
       </div>
     );
