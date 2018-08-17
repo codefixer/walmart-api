@@ -6,8 +6,5 @@
 # production
 /build
 
-# api key
+# dev api key
 .env
-
-# vs code settings
-/.vscode
