@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "author": "Mike Clinton",
-  "license": "MIT",
+  "license": "",
   "homepage": "https://walmart-api.herokuapp.com/",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.2",
