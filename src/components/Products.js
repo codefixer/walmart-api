@@ -1,78 +1,66 @@
 import React from "react";
-import Header from "./Header";
-import axios from "axios";
-import ProductList from "./ProductList";
-import { Spinner } from "spin.js";
-import { library } from "@fortawesome/fontawesome-svg-core";
-import { faStar } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import "../css/Products.css";
-import "../css/Spinner.css";
-library.add(faStar)
 
 class Products extends React.Component {
-  state = {
-    items: [],
-    search_term: "",
-    sort_by: "relevance",
-    min_price: 0,
-    max_price: 10000
-	};
-  
-  updateSearchTerm = (e) => {
-    e.preventDefault();
-    e.target.value ? this.setState({search_term: e.target.value}) : this.setState({search_term: ""});
-  }
-
-  updateSortBy = (e) => {
-    e.persist();
-    this.setState(
-      { sort_by: e.target.value },
-      () => this.getProducts(e)
-    );
-  }
-  
-  updateMinPrice = (e) => {
-    e.target.value ? this.setState({min_price: e.target.value}) : this.setState({min_price: 0});
-  }
-
-  updateMaxPrice = (e) => {
-    e.target.value ? this.setState({max_price: e.target.value}) : this.setState({max_price: 10000});
-  }
-
-  getProducts = async (e) => {
-    e.preventDefault();
-    if(this.state.search_term){
-      const target = document.getElementById('root');
-      let spinner = new Spinner({color:'#000', lines: 12}).spin(target);
-      const self = this;
-      axios.get(`https://cors-anywhere.herokuapp.com/http://api.walmartlabs.com/v1/search?query=${this.state.search_term}&format=json&apiKey=${process.env.REACT_APP_API_KEY}&sort=${this.state.sort_by}&facet=on&facet.range=price:[${this.state.min_price} TO ${this.state.max_price}]`)
-      .then(function (response) {
-        // handle success
-        console.log(response.data);
-        self.setState(response.data);
-      })
-      .catch(function (error) {
-        // handle error
-        console.log(error);
-      })
-      .then(function () {
-        // always executed
-        spinner.stop();
-      });
+  renderStarRating(rating){
+    if(Math.ceil(rating) === 1){
+      return <span>
+        <FontAwesomeIcon icon="star" />
+      </span>
+    } else if (Math.ceil(rating) === 2){
+      return <span>
+        <FontAwesomeIcon icon="star" />
+        <FontAwesomeIcon icon="star" />
+      </span>
+    } else if (Math.ceil(rating) === 3){
+      return <span>
+        <FontAwesomeIcon icon="star" />
+        <FontAwesomeIcon icon="star" />
+        <FontAwesomeIcon icon="star" />
+      </span>
+    } else if (Math.ceil(rating) === 4){
+      return <span>
+        <FontAwesomeIcon icon="star" />
+        <FontAwesomeIcon icon="star" />
+        <FontAwesomeIcon icon="star" />
+        <FontAwesomeIcon icon="star" />
+      </span>
+    } else if (Math.ceil(rating) === 5){
+      return <span>
+        <FontAwesomeIcon icon="star" />
+        <FontAwesomeIcon icon="star" />
+        <FontAwesomeIcon icon="star" />
+        <FontAwesomeIcon icon="star" />
+        <FontAwesomeIcon icon="star" />
+      </span>
     }
   }
-  
+    
   render() {
     return (
-      <div className="page">
-        <Header
-            updateSearchTerm={this.updateSearchTerm}
-            updateSortBy={this.updateSortBy}
-            updateMinPrice={this.updateMinPrice}
-            updateMaxPrice={this.updateMaxPrice}
-            getProducts={this.getProducts}
-          />
-        <ProductList data={this.state} />
+      <div className="products">
+        {this.props.data.totalResults &&
+        <div className="num-results">
+          <p>Showing 1-{this.props.data.numItems} of {this.props.data.totalResults} results</p>
+        </div>
+        }
+        <div className="product-listing">
+          { this.props.data.items.map(item => (
+            <div className="product" key={item.itemId}>
+              <p><a href={item.productUrl} target="_blank"><img src={item.mediumImage} alt="" /></a></p>
+              <p><a href={item.productUrl} target="_blank">{item.name}</a></p>
+              {item.customerRating && <p>
+                <span className="star-rating">{this.renderStarRating(item.customerRating)}</span>
+                <span className="num-reviews">{item.numReviews}</span></p>}
+              <p>
+                {item.salePrice && <span className="sale-price">${item.salePrice.toFixed(2)}</span>}
+                {item.msrp && <span className="msrp">List <s>${item.msrp.toFixed(2)}</s></span>}
+              </p>
+              {item.isTwoDayShippingEligible && <p className="two-day">2-day shipping</p>}
+            </div>
+          )) }
+        </div>
       </div>
     );
   }

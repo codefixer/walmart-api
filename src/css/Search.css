@@ -1,0 +1,37 @@
+.search .refine-sort {
+  background-color: #fff;
+  font-size: 14px;
+  border-bottom: 1px solid #aaa;
+  padding: 6px 10px;
+  display: grid;
+  grid-gap: 6px; }
+  @media (min-width: 768px) {
+    .search .refine-sort {
+      grid-template-columns: 1fr 1fr; } }
+  .search .refine-sort button {
+    height: 30px;
+    background-color: #ffcc00;
+    border: 1px solid #000;
+    border-radius: 3px;
+    margin-left: 5px;
+    position: relative;
+    top: -1px; }
+  .search .refine-sort button:hover {
+    background-color: #ffe066;
+    cursor: pointer; }
+  @media (min-width: 768px) {
+    .search .refine-sort .sortby {
+      text-align: right; } }
+  .search .refine-sort .sortby select {
+    font-size: 16px;
+    background-color: #fff;
+    border: 1px solid #aaa;
+    padding: 5px;
+    border-radius: 3px; }
+  .search .refine-sort .refine input {
+    font-size: 16px;
+    background-color: #fff;
+    border: 1px solid #aaa;
+    padding: 5px;
+    border-radius: 3px;
+    width: 50px; }

@@ -1,18 +1,18 @@
 import React from "react";
 import Header from "./Header";
-import "../css/Stores.css";
+import "../css/Home.css";
 
-class Stores extends React.Component {
+class Home extends React.Component {
   render() {
     return (
       <div className="page">
         <Header />
-        <div className="store-locator">
-          <p>STORE LOCATOR</p>
+        <div className="home">
+          <p>PLEASE TRY THE PRODUCT SEARCH ABOVE</p>
         </div>
       </div>
     );
   }
 };
 
-export default Stores;
+export default Home;
