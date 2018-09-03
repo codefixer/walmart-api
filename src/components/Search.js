@@ -68,7 +68,9 @@ class Search extends React.Component {
   }
 
   componentDidMount() {
-    this.getProducts();
+    if(this.props.location.state.search_term){
+      this.getProducts();
+    }
   }
 
   componentDidUpdate(prevProps) {
@@ -80,7 +82,7 @@ class Search extends React.Component {
   render() {
     return (
       <div className="page">
-        <Header />
+        <Header search_term={this.props.location.state.search_term} />
         <div className="search">
           <div className="refine-sort">
             <div className="refine">

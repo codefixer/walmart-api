@@ -13,24 +13,46 @@ class Header extends React.Component {
     search_term: ""
 	};
   
+  componentDidMount() {
+    if (this.props.search_term) {
+      this.setState({search_term: this.props.search_term});
+    }
+  }
+  
   updateSearchTerm = (e) => {
     e.preventDefault();
     e.target.value ? this.setState({search_term: e.target.value}) : this.setState({search_term: ""});
   }
-    
-  render() {
+  
+  handleSearchClick(e){
+    if(this.state.search_term === "") e.preventDefault()
+  }
+
+  render() {      
     return (
       <div className="header">
         <div className="navbar">
-          <NavLink to="/"><button title="Home"><FontAwesomeIcon className="navitem" icon="home" /></button></NavLink>
-          <div>
-            <input type="text" name="search_term" placeholder="Search" onChange={this.updateSearchTerm} />
-            <NavLink to={{
+          <NavLink to="/">
+            <button title="Home">
+              <FontAwesomeIcon className="navitem" icon="home" />
+            </button>
+          </NavLink>
+          <form>
+            <input type="text" name="search_term" placeholder="Search" onChange={this.updateSearchTerm} value={this.state.search_term} />
+            <NavLink onClick={(e) => this.handleSearchClick(e)} to={{
               pathname: '/search',
               state: { search_term: this.state.search_term }
-            }}><button title="Search"><FontAwesomeIcon className="navitem" icon="search" /></button></NavLink>
-          </div>
-          <NavLink to="/stores"><button title="Store Locator"><FontAwesomeIcon className="navitem" icon="map-marker-alt" /></button></NavLink>
+            }}>
+              <button title="Search">
+                <FontAwesomeIcon className="navitem" icon="search" />
+              </button>
+            </NavLink>
+          </form>
+          <NavLink to="/stores">
+            <button title="Store Locator">
+              <FontAwesomeIcon className="navitem" icon="map-marker-alt" />
+            </button>
+          </NavLink>
         </div>
       </div>
     );
