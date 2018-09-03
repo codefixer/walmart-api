@@ -38,7 +38,7 @@ class Header extends React.Component {
             </button>
           </NavLink>
           <form>
-            <input type="text" name="search_term" placeholder="Search" onChange={this.updateSearchTerm} value={this.state.search_term} />
+            <input type="search" name="search_term" placeholder="Search" onChange={this.updateSearchTerm} value={this.state.search_term} />
             <NavLink onClick={(e) => this.handleSearchClick(e)} to={{
               pathname: '/search',
               state: { search_term: this.state.search_term }
